@@ -6,7 +6,7 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-            int secretNum = 7; //new Random().Next(1,100);
+            int secretNum = new Random().Next(1,100);
 
             int GuessCount = 3;
             
