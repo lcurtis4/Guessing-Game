@@ -11,7 +11,7 @@ namespace GuessingGame
             int GuessCount = 0;
             int Difficulty = 0;
             
-            Console.WriteLine("Enter Difficutly");
+            Console.WriteLine("Enter Difficutly: 1-4");
             while (Difficulty == 0)
             {
                 switch(int.Parse(Console.ReadLine()))
@@ -43,7 +43,7 @@ namespace GuessingGame
             }
 
             Console.WriteLine("Guess the Secret Number");
-            Console.WriteLine("Enter a number between 1-100 you have 4 guesses");
+            Console.WriteLine($"Enter a number between 1-100 you have {GuessCount} guesses");
             
             int guess = int.Parse(Console.ReadLine());
 
