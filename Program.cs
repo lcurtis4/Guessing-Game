@@ -6,9 +6,9 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-            int secretNum = new Random().Next(1,100);
+            int secretNum = new Random().Next(1,101);
 
-            int GuessCount = 3;
+            int GuessCount = 0;
             int Difficulty = 0;
             
             Console.WriteLine("Enter Difficutly");
@@ -28,8 +28,13 @@ namespace GuessingGame
                             break;
                         case 3: 
                             Difficulty = 3;
-                            GuessCount = 8;
+                            GuessCount = 4;
                             Console.WriteLine("You've Selected Hard. You have 4 guesses");
+                            break;
+                        case 4:
+                            Difficulty = 4;
+                            GuessCount = 101;
+                            Console.WriteLine("You're a little cheater aren't you?");
                             break;
                         default: 
                             Console.WriteLine("Please select dificulty 1-3");
@@ -46,7 +51,7 @@ namespace GuessingGame
             {
                 if (guess == secretNum) 
                     {
-                        Console.WriteLine("You Got it");
+                        Console.WriteLine("You Got it!");
                         break;
                     }
                 else
@@ -61,7 +66,7 @@ namespace GuessingGame
                         {
                             HighLowString = "too low";
                         }
-                        Console.WriteLine($"Sorry {guess} is {HighLowString}. You have {GuessCount} {GuessString} left, Please Try again");
+                        Console.WriteLine($"Sorry, {guess} is {HighLowString}. You have {GuessCount -1} {GuessString} left, Please Try again");
                         guess = int.Parse(Console.ReadLine());
                         GuessCount--;
                     }
